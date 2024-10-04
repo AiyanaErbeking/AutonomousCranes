@@ -1,0 +1,11 @@
+*.import/
+.import/
+*.godot/
+*.mono/
+*.tmp/
+*.log/
+.editor_config
+.export/
+.godot/mono/
+.godot/mono/solution/ > .gitignore
+echo -e *.import/n.import/n*.godot/n*.mono/n*.tmp/n*.log/n.editor_confign.export/n.godot/mono/n.godot/mono/solution/
