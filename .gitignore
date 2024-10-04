@@ -1,11 +1,30 @@
-*.import/
+# Ignore the .import folder, where Godot stores imported assets.
 .import/
-*.godot/
-*.mono/
-*.tmp/
-*.log/
+
+# Ignore the .godot folder for local project settings (optional).
+.godot/
+
+# Ignore temporary files created by Godot and the system.
+*.tmp
+*.swap
+*.log
+*.config
+
+# Ignore specific Godot editor configuration files.
 .editor_config
 .export/
+
+# Mono-specific (for Godot projects using C#):
+.mono/
 .godot/mono/
-.godot/mono/solution/ > .gitignore
-echo -e *.import/n.import/n*.godot/n*.mono/n*.tmp/n*.log/n.editor_confign.export/n.godot/mono/n.godot/mono/solution/
+.godot/mono/solution/
+
+# Windows OS specific
+Thumbs.db
+desktop.ini
+
+# macOS specific
+.DS_Store
+
+# Linux specific
+*~
