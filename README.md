@@ -1,16 +1,26 @@
+*Running the project*
+- the entire project is contained in the scene `crane.tscn`
+- open the project in Godot (by opening the `project.godot` file) and load this scene
+- there are two cameras which can be toggled on/off
+	- the camera that is a child node of `Boom` is the camera footage we want to use as input for our CV algorithm
 
-# Godot RL Agents
 
-This repository contains the Godot 4 asset / plugin for the Godot RL Agents library, you can find out more about the library on its Github page [here](https://github.com/edbeeching/godot_rl_agents).
+*Integrating a CV algorithm in Godot*
+- it is possible to export camera feed as an image or texture eg. with `get_viewport().get_texture()`
+- these can then be passed as input to a CV algorithm
+- the CV algorithm can be written in Python
+- integrate Godot with Python
+	- `GDNative`: links Godot with external Python libraries eg. `OpenCV`
+	- `Godot-Python`: directly call Python scripts from within Godot
 
-The Godot RL Agents is a fully Open Source package that allows video game creators, AI researchers and hobbyists the opportunity to learn complex behaviors for their Non Player Characters or agents. 
-This libary provided this following functionaly:
-* An interface between games created in the [Godot Engine](https://godotengine.org/) and Machine Learning algorithms running in Python
-* Wrappers for three well known rl frameworks: StableBaselines3, Sample Factory and [Ray RLLib](https://docs.ray.io/en/latest/rllib-algorithms.html)
-* Support for memory-based agents, with LSTM or attention based interfaces
-* Support for 2D and 3D games
-* A suite of AI sensors to augment your agent's capacity to observe the game world
-* Godot and Godot RL Agents are completely free and open source under the very permissive MIT license. No strings attached, no royalties, nothing. 
 
-You can find out more about Godot RL agents in our AAAI-2022 Workshop [paper](https://arxiv.org/abs/2112.03636).
+*Reinforcement Learning in Godot*
+- use the Godot library `RL Agents` https://github.com/edbeeching/godot_rl_agents
 
+
+*Performance*
+- RL training can be run in parallel with environment duplications - supported by `RL Agents`
+
+
+*To Fix*
+- currently the collision boxes of `Truck`, `Hook` and `Gruzchik` are a bit erroneous (it is possible to push Gruzchik with the hook and the hook moves through the truck)
